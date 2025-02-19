@@ -1,17 +1,16 @@
 const express = require("express");
 const app = express();
 
-
-app.use("/tome", (req, res) => {
-    res.send("Tome Tome Tome");
+app.get("/user", (req, res) => {
+    res.send({firstName: "Akshay", lastName: "Saini"})
 })
 
-app.use("/chicken", (req, res) => {
-    res.send("Chicken Chicken Chicken")
+app.post("/user", (req, res) => {
+    res.send("Data Successfully Saved To The Database!")
 })
 
-app.use("/", (req, res) => {
-    res.send("Welcome to the main page")
+app.delete("/user", (req, res) => {
+    res.send("Deleted Successfully!")
 })
 
 app.listen(7777, () => {
